@@ -5,7 +5,8 @@ class User < ApplicationRecord
   gravtastic
 
   has_many :friendships
-  has_many :friends, through: :friendships  
+  has_many :friends, through: :friendships
+  has_many :posts,dependent: :destroy  
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -21,6 +22,11 @@ class User < ApplicationRecord
 
   def followed
     followed_arr = Friendship.where(friend_id:self.id).map{|object| User.find(object.user_id)}
+  end
+
+  def feed 
+    following_ids = self.friends.map{|friend|friend.id}
+    Post.where(user_id:self.id).or(Post.where(user_id:following_ids))
   end
     
         

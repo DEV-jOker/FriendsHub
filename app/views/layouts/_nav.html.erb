@@ -6,10 +6,11 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
+    <% if user_signed_in? %>
       <li class="nav-item active">
-        <%= link_to 'Users', users_path,class:"nav-link" %>
+        <%= link_to 'My Posts', posts_path,class:"nav-link" %>
       </li>
-      <% if user_signed_in? %>
+      
         <li class="nav-item dropdown">
           <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="account-profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Account

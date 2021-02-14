@@ -1,10 +1,14 @@
-<div class="card">
-  <div class="card-body">
-    <form>
-  <div class="form-group">
-    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Can type your post....." rows="3"></textarea>
+<div class="card mb-4">
+  <div class="card-header">
+    <%= link_to post.user.name, user_path(post.user) %>
   </div>
-  <button type="submit" class="btn btn-success float-right"><i class="fa fa-paper-plane"></i></button>
-</form>
+  <div class="card-body">
+    <p class="card-text">
+      <%= post.tweet%>
+    </p>
+    
+  </div>
+  <div class="card-footer text-muted">
+    <%= time_ago_in_words(post.created_at, include_seconds: true)%> ago <% if current_user==post.user %><%= link_to 'Delete',post_path(post),class:"btn btn-outline-danger float-right" ,method: :delete,data: { confirm: 'Are you sure?' }%><%end%>
   </div>
 </div>
