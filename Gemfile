@@ -76,3 +76,5 @@ gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'hirb', '~> 0.7.3'
 
 gem 'devise', '~> 4.7', '>= 4.7.2'
+
+gem 'gravtastic'

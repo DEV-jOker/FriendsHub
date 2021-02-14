@@ -1,0 +1,7 @@
+<% if current_user != user%>
+  <%if current_user.is_a_friend?(user)%>
+    <%= render 'users/unfollow',user:user%>
+  <%else%>
+  <%= render 'users/follow',user:user%>
+  <%end%>
+<%end%>

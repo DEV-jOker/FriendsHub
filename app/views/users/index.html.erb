@@ -1,0 +1,7 @@
+
+<% if @users.empty? %>
+  <h2 class="text-danger">"<%= @search_string %>" not found</h2>
+  <% else %>
+  <h2 class="text-info">Search results for "<%= @search_string %>" are following</h2>
+  <%= render 'users/user_table' %>
+<% end %>

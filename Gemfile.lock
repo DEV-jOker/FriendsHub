@@ -95,6 +95,7 @@ GEM
       railties (>= 3.2, < 7)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gravtastic (3.2.6)
     hirb (0.7.3)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
@@ -238,6 +239,7 @@ DEPENDENCIES
   devise (~> 4.7, >= 4.7.2)
   faker (~> 1.6, >= 1.6.6)
   font-awesome-rails (~> 4.7, >= 4.7.0.5)
+  gravtastic
   hirb (~> 0.7.3)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.4)
